@@ -6,8 +6,10 @@
      Email : <input formControlName="email">
     </div>
     <div>
-     Password : <input type="password" formControlName="password">
-    </div>
+        Password : <input type="password" formControlName ="password">
+        <span style="color: red;" *ngIf="form.get('password').errors?.required">Password required</span>
+        <span style="color: red;" *ngIf="form.get('password').errors?.minlength">Password should be at least 8 characters </span>
+    </div>       
     <div>
      Confirm Password : <input type="password" formControlName="confirmPassword">
     </div>
