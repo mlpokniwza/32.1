@@ -9,7 +9,7 @@ export class MyFormComponent implements OnInit {
 form: FormGroup;
 constructor(private fb: FormBuilder) {
   this.form = this.fb.group({
-  phoneNo: [''],
+  phoneNo: ['', [Validators.required, Validators.minLength(10)]],
   email: ['', Validators.email],
   password: ['', [Validators.required, Validators.minLength(8)]],
   confirmPassword: ['', Validators.required]
